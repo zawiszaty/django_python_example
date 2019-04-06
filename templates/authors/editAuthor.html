@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     {{ author.name }}
+    <form action="{% url 'create_author' %}" method="post">
+        {% csrf_token %}
+        {% include "authors/form.html" %}
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}
