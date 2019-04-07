@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-     {{ author.name }}
-    <form action="{% url 'edit_author' author.id %}" method="post">
+    <form action="{% url 'create_category' %}" method="post">
         {% csrf_token %}
-        {% include "authors/form.html" %}
+        {% include "categoreis/form.html" %}
         <input type="submit" value="Submit"/>
     </form>
 {% endblock %}
