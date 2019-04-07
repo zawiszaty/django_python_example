@@ -1,1 +1,7 @@
-home
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'get_all_book' %}">Books</a> |
+    <a href="{% url 'get_all_categories' %}">Categories</a> |
+    <a href="{% url 'get_all_authors' %}">Authors</a> |
+{% endblock %}

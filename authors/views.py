@@ -15,7 +15,7 @@ def create_author(request):
 
     if form.is_valid():
         form.save()
-        return redirect('get_all_book')
+        return redirect('get_all_authors')
 
     return render_to_response("authors/createAuthor.html", {
         'form': form
@@ -28,7 +28,7 @@ def edit_author(request, author_id):
 
     if form.is_valid():
         form.save()
-        return redirect("get_all_book")
+        return redirect("get_all_authors")
     return render_to_response("authors/editAuthor.html", {
         'author': author,
         'form': form
@@ -39,4 +39,4 @@ def delete_author(request, author_id):
     author = get_object_or_404(Author, pk=author_id)
     author.delete()
 
-    return redirect("get_all_book")
+    return redirect("get_all_authors")

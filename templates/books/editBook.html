@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     {{ books.name }}
+    <form action="{% url 'edit_book' books.id %}" method="post">
+        {% csrf_token %}
+        {% include "books/form.html" %}
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}
